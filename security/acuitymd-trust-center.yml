@@ -1,0 +1,24 @@
+generated: '2026-07-17'
+method: searched
+source: https://thoropass.com/customers/acuitymd/
+notes: >-
+  AcuityMD does not publish a self-hosted trust center or /security page on
+  acuitymd.com (probed trust.acuitymd.com, security.acuitymd.com, /trust,
+  /security, /company/legal/trust, /security-and-compliance — all absent or
+  404). Its compliance posture is verified through public third-party evidence:
+  a Thoropass customer case study and CEO Mike Monovoukas discussing the
+  company's SOC 2 program. Recorded as real, externally-verified intelligence
+  rather than a first-party portal.
+url: null
+certifications:
+- name: SOC 2 Type 1
+  status: achieved
+  evidenced_by: https://thoropass.com/customers/acuitymd/
+  auditor_platform: Thoropass
+evidence:
+- source: https://thoropass.com/customers/acuitymd/
+  kind: vendor-case-study
+  detail: "With SOC 2 Type 1 now in place, AcuityMD can establish credibility with enterprise buyers and shorten sales cycles."
+- source: https://www.linkedin.com/posts/cristina-bartolacci-953417107_excited-to-get-the-chance-to-highlight-acuitymd-activity-7038553845613940737-3YEz
+  kind: leadership-statement
+  detail: AcuityMD leadership publicly discussing the SOC 2 compliance journey with enterprise MedTech buyers.

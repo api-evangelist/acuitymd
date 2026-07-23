@@ -1,0 +1,36 @@
+generated: '2026-07-17'
+method: searched
+source: >-
+  Thoropass customer case study documenting AcuityMD's SOC 2 program, plus
+  AcuityMD public surface probes (no public API, no OAuth/OIDC, no FHIR).
+notes: >-
+  AcuityMD is a closed enterprise SaaS MedTech commercial-intelligence platform
+  with no public developer API. Cross-cutting API standards (OAuth2, OIDC, FHIR,
+  FAPI, SCIM, OData, RFC 9457, JSON:API) are Not Applicable - there is no public
+  spec or auth surface to conform to. The one published, verifiable posture is
+  the SOC 2 security program run via Thoropass.
+standards:
+- id: soc2
+  name: SOC 2 (AICPA Trust Services Criteria)
+  conforms: true
+  evidence: >-
+    Thoropass customer case study documents AcuityMD completing its SOC 2
+    compliance program.
+  source: https://thoropass.com/blog/compliance/acuitymds-first-year-of-compliance-with-thoropass/
+- id: oauth2
+  name: OAuth 2.0
+  conforms: false
+  evidence: No public API or OAuth authorization surface published.
+- id: oidc
+  name: OpenID Connect
+  conforms: false
+  evidence: No /.well-known/openid-configuration (probed 404).
+- id: fhir-r4
+  name: HL7 FHIR R4
+  conforms: false
+  evidence: >-
+    Platform ingests claims/procedure/CMS data but exposes no public FHIR API.
+- id: rfc9457-problem-details
+  name: RFC 9457 Problem Details
+  conforms: false
+  evidence: No public API spec to evaluate error format.

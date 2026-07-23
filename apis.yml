@@ -1,22 +1,49 @@
 aid: acuitymd
 name: AcuityMD
-description: 'AcuityMD is a company surfaced as a portfolio company of iconiq-capital, redpoint-ventures
-  and added to the API Evangelist network as a stub for enrichment. Sector: healthcare. This profile is
-  a lead awaiting the enrichment pipeline.'
+description: >-
+  AcuityMD is a MedTech commercial intelligence platform that combines precise
+  medical device market data, AI-powered insights (AcuityAI), and workflow
+  tools to help commercial teams accelerate product adoption and revenue
+  growth. Used by 500+ medical device companies, the platform spans Market
+  Intelligence, Care Journeys, Targeting, Pipeline, Contracts, Territories and
+  Forecasting. AcuityMD is a closed enterprise SaaS product: it exposes no
+  public developer API, but integrates via a Salesforce AppExchange app, a
+  Snowflake Marketplace listing, and an enterprise Data Connector that delivers
+  market intelligence into customer data warehouses. Backed by ICONIQ Capital
+  and Redpoint Ventures.
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: >-
+  https://cdn.prod.website-files.com/6985dd9e41b26a29ef1c43dc/69863643e052c9604d901fe1_acuitymd-opengraph.jpg
 url: https://raw.githubusercontent.com/api-evangelist/acuitymd/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - iconiq-capital
 - redpoint-ventures
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-no-public-api
 specificationVersion: '0.20'
 created: '2026-07-17'
 modified: '2026-07-17'
 tags:
 - Company
 - Healthcare
+- MedTech
+- Medical Devices
+- Market Intelligence
+- Sales Intelligence
+- Commercial Analytics
+- Data
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -26,3 +53,34 @@ maintainers:
 common:
 - type: Website
   url: https://www.acuitymd.com/
+- type: Integrations
+  url: https://www.acuitymd.com/platform/products/integrations
+- type: HelpCenter
+  url: https://help.acuitymd.com/en/
+- type: Support
+  url: https://www.acuitymd.com/company/contact-us
+- type: Blog
+  url: https://www.acuitymd.com/resources/blog
+- type: Login
+  url: https://app.acuitymd.com/login
+- type: PrivacyPolicy
+  url: https://www.acuitymd.com/company/legal/privacy
+- type: TermsOfService
+  url: https://www.acuitymd.com/company/legal/contracts
+- type: GitHubOrganization
+  url: https://github.com/acuitymd
+- type: LLMsTxt
+  url: llms/acuitymd-llms.txt
+- type: Conformance
+  url: conformance/acuitymd-conformance.yml
+- type: Compliance
+  url: conformance/acuitymd-conformance.yml
+- type: DomainSecurity
+  url: security/acuitymd-domain-security.yml
+- type: WellKnown
+  url: well-known/acuitymd-well-known.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
