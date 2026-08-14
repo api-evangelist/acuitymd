@@ -34,7 +34,7 @@ x-tier: profiled
 x-tier-reason: enriched-no-public-api
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-08-14'
 tags:
 - Company
 - Healthcare
@@ -69,18 +69,54 @@ common:
   url: https://www.acuitymd.com/company/legal/contracts
 - type: GitHubOrganization
   url: https://github.com/acuitymd
+- type: AppExchange
+  url: >-
+    https://appexchange.salesforce.com/appxListingDetail?listingId=93076337-adfe-41f9-a479-b0692d991452
+- type: Marketplace
+  url: >-
+    https://app.snowflake.com/marketplace/listing/GZ2FTZ5OMHSBI/acuitymd-acuitymd-encounters-data-mart-us
 - type: LLMsTxt
   url: llms/acuitymd-llms.txt
+- type: ChangeLog
+  url: changelog/acuitymd-changelog.yml
+- type: Lifecycle
+  url: lifecycle/acuitymd-lifecycle.yml
+- type: Plans
+  url: plans/acuitymd-plans-pricing.yml
 - type: Conformance
   url: conformance/acuitymd-conformance.yml
 - type: Compliance
   url: conformance/acuitymd-conformance.yml
 - type: DomainSecurity
   url: security/acuitymd-domain-security.yml
-- type: WellKnown
-  url: well-known/acuitymd-well-known.yml
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-14'
+  status: minimal
+  artifacts_added: 6
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+  note: >-
+    Contract discovery (STEP 0b) re-run against every AcuityMD host — no
+    OpenAPI, GraphQL, MCP or A2A surface exists. The WellKnown pointer was
+    REMOVED: every probed /.well-known/ path 404s on www, app.acuitymd.com
+    answers 200 with an SPA HTML shell for all of them, and the one real
+    security.txt found is Intercom's, not AcuityMD's.
+x-coverage:
+  state: gated
+  reason: marketplace-only
+  detail: >-
+    AcuityMD ships no first-party developer surface at all — its entire
+    integration layer is published inside host platforms, as the "AcuityMD for
+    Salesforce" managed package on the Salesforce AppExchange and the AcuityMD
+    Encounters Data Mart on Snowflake Marketplace, plus a contract-only
+    enterprise Data Connector, so there is no AcuityMD-hosted spec, reference
+    or key issuance to read.
+  evidence:
+  - url: https://appexchange.salesforce.com/appxListingDetail?listingId=93076337-adfe-41f9-a479-b0692d991452
+    status: 200
+  - url: https://app.snowflake.com/marketplace/listing/GZ2FTZ5OMHSBI/acuitymd-acuitymd-encounters-data-mart-us
+    status: 200
+  - url: https://api.acuitymd.com/openapi.json
+    status: 404
+  - url: https://www.acuitymd.com/openapi.json
+    status: 404
+  checked: '2026-08-14'
