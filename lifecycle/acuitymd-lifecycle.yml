@@ -1,0 +1,54 @@
+generated: '2026-08-14'
+method: probed
+source: >-
+  live probes of status.acuitymd.com, acuitymd.statuspage.io,
+  www.acuitymd.com/roadmap and the AcuityMD help center
+notes: >-
+  AcuityMD publishes no API versioning policy, no deprecation policy, no
+  Sunset/Deprecation header contract (RFC 8594), no public SLA and no status
+  page — consistent with having no public API. Two candidate status surfaces
+  were probed and both are negatives: status.acuitymd.com does not resolve
+  (DNS failure, curl exit 6), and acuitymd.statuspage.io 302-redirects to
+  atlassian.com/software/statuspage — the Statuspage marketing site, i.e. the
+  tenant does not exist. Neither a StatusPage nor a Deprecation pointer is
+  wired into apis.yml, because neither surface is published. The only
+  lifecycle signal AcuityMD does publish is the monthly "What's New!" product
+  release-notes collection captured in changelog/acuitymd-changelog.yml.
+versioning:
+  scheme: none
+  published: false
+  policy_url: null
+deprecation:
+  policy: false
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  deprecated_operations: []
+status_page:
+  present: false
+  url: null
+sla:
+  published: false
+  url: null
+  note: >-
+    Availability commitments, if any, are in the negotiated enterprise
+    agreement referenced from https://www.acuitymd.com/company/legal/contracts;
+    no public SLA document is served.
+changelog:
+  present: true
+  scope: product
+  url: https://help.acuitymd.com/en/collections/13738975-what-s-new
+evidence:
+- url: https://status.acuitymd.com/
+  status: 0
+  note: DNS does not resolve.
+- url: https://acuitymd.statuspage.io/
+  status: 200
+  note: >-
+    Redirects to https://www.atlassian.com/software/statuspage — the Statuspage
+    product page, not an AcuityMD tenant. Title "Real-Time Incident
+    Communication with Statuspage | Atlassian".
+- url: https://www.acuitymd.com/roadmap
+  status: 404
+- url: https://www.acuitymd.com/company/legal/contracts
+  status: 200

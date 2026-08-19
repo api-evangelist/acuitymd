@@ -1,0 +1,48 @@
+generated: '2026-08-14'
+method: searched
+source: https://help.acuitymd.com/en/collections/13738975-what-s-new
+notes: >-
+  AcuityMD publishes no API changelog — there is no public API. It does publish
+  a dated PRODUCT release-notes surface: the "What's New!" collection in its
+  Intercom-hosted help center, organized by month, with each article carrying a
+  JSON-LD dateModified. The surface is thin (2 articles visible on this pass,
+  both filed under July 2026) and there is no RSS/Atom feed, no version scheme,
+  and no machine-readable feed of any kind. Recorded as a product changelog,
+  not an API changelog.
+scope: product
+url: https://help.acuitymd.com/en/collections/13738975-what-s-new
+feed: null
+scheme: none
+versioning: >-
+  No published version scheme. Releases are grouped by calendar month
+  ("July 2026") rather than by version number.
+current_version: null
+entry_count: 2
+entries:
+- title: AcuityAI Research
+  date: '2026-06-30'
+  month: July 2026
+  url: https://help.acuitymd.com/en/articles/15683810-acuityai-research
+  breaking: false
+  kind: feature
+  highlight: >-
+    AI-guided research projects that combine AcuityMD market data with
+    transparent analysis, methodology and citations, aimed at MedTech strategy
+    teams evaluating market entry and product prioritization.
+- title: Viewing GLN Identifiers for Sites of Care [video]
+  date: '2026-07-31'
+  month: July 2026
+  url: https://help.acuitymd.com/en/articles/16163079-viewing-gln-identifiers-for-sites-of-care-video
+  breaking: false
+  kind: data
+  highlight: >-
+    AcuityMD now displays GS1 GLN (Global Location Number) identifiers for
+    supported Sites of Care, so customers can match and deduplicate facilities
+    against their own systems.
+evidence:
+- url: https://help.acuitymd.com/en/collections/13738975-what-s-new
+  status: 200
+- url: https://help.acuitymd.com/en/articles/15683810-acuityai-research
+  status: 200
+- url: https://help.acuitymd.com/en/articles/16163079-viewing-gln-identifiers-for-sites-of-care-video
+  status: 200

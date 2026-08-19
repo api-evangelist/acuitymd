@@ -1,0 +1,27 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.acuitymd.com/platform/products/integrations
+notes: >-
+  No published rate limits, because there is no public API to limit. AcuityMD
+  publishes no developer portal, no API reference and no machine-readable
+  contract; its integration surface is a Salesforce AppExchange managed
+  package, a Snowflake Marketplace data listing and an enterprise Data
+  Connector, none of which documents request quotas, windows or throttling
+  headers on a public page. No RateLimits pointer is wired into apis.yml: with
+  limit_count 0 the pointer would assert a published rate-limit surface that
+  does not exist.
+limit_count: 0
+limits: []
+headers: []
+retry_after: null
+exhaustion_status: null
+evidence:
+- url: https://www.acuitymd.com/platform/products/integrations
+  status: 200
+  note: Integration page describes CRM/Snowflake/Data Connector delivery; no limits.
+- url: https://help.acuitymd.com/en/
+  status: 200
+  note: Help center has 2 collections and no API or rate-limit documentation.
+- url: https://api.acuitymd.com/
+  status: 404
+  note: Envoy proxy answers every anonymous path with 404 "fault filter abort".

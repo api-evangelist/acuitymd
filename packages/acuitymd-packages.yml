@@ -1,0 +1,67 @@
+generated: '2026-08-14'
+method: searched
+source: >-
+  npm registry search, PyPI, RubyGems, crates.io, plus the AcuityMD GitHub
+  organization (https://github.com/acuitymd) and the AcuityMD website
+notes: >-
+  AcuityMD publishes NO client libraries or SDKs in any public package
+  registry. Searched and confirmed absent: npm (registry search for "acuitymd"
+  returns total 0), PyPI (/pypi/acuitymd/json → 404), RubyGems
+  (/api/v1/gems/acuitymd.json → 404), crates.io (search "acuitymd" → 0
+  crates). The public AcuityMD GitHub org holds three repositories and none is
+  an API client: "silk-chiffon" (Rust, columnar data-format conversion — not
+  published to crates.io, confirmed 404), "pgschema" (TypeScript, a Kysely
+  schema-generator proof of concept) and "extended-exercise-windows" (a
+  non-code list of startups with employee-friendly option-exercise terms).
+  Distribution of AcuityMD data happens through a Salesforce AppExchange
+  managed package and a Snowflake Marketplace listing, neither of which has a
+  language package-registry artifact. No SDKs pointer is wired into apis.yml —
+  there is no official SDK to point at.
+package_count: 0
+packages: []
+registries_checked:
+- registry: npm
+  query: https://registry.npmjs.org/-/v1/search?text=acuitymd
+  status: 200
+  result: 0 packages
+- registry: pypi
+  query: https://pypi.org/pypi/acuitymd/json
+  status: 404
+  result: absent
+- registry: rubygems
+  query: https://rubygems.org/api/v1/gems/acuitymd.json
+  status: 404
+  result: absent
+- registry: crates.io
+  query: https://crates.io/api/v1/crates?q=acuitymd
+  status: 200
+  result: 0 crates
+- registry: crates.io
+  query: https://crates.io/api/v1/crates/silk-chiffon
+  status: 200
+  result: >-
+    crate does not exist — the org's own Rust repo is unpublished, so it has no
+    version or release date to record.
+org_repositories:
+- name: silk-chiffon
+  language: Rust
+  description: Silky smooth conversion between columnar data formats
+  api_client: false
+  version: null
+  published: null
+  note: Not published to crates.io (checked, absent).
+- name: pgschema
+  language: TypeScript
+  description: POC of a Kysely schema generator for qbt
+  api_client: false
+  version: null
+  published: null
+  note: Proof of concept; not published to npm (org search returned 0 packages).
+- name: extended-exercise-windows
+  language: null
+  description: >-
+    A list of startups with employee-friendly option-exercise terms — a
+    recruiting/culture artifact, not software.
+  api_client: false
+  version: null
+  published: null

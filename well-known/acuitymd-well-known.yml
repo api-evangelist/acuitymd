@@ -1,12 +1,29 @@
-generated: '2026-07-17'
+generated: '2026-08-14'
 method: probed
-source: live HTTP probes of standard /.well-known/ paths on AcuityMD hosts
-host: www.acuitymd.com
+source: >-
+  live HTTP probes of the standard /.well-known/ paths on every AcuityMD host
+  (www.acuitymd.com, app.acuitymd.com, help.acuitymd.com, api.acuitymd.com)
+hosts:
+- www.acuitymd.com
+- app.acuitymd.com
+- help.acuitymd.com
+- api.acuitymd.com
 notes: >-
-  AcuityMD publishes no standard well-known discovery documents. All probed
-  paths returned 404. No security.txt, no OpenID/OAuth metadata, no API
-  catalog, no AI plugin manifest. Expected — AcuityMD is a closed SaaS MedTech
-  intelligence platform with no public developer API surface.
+  AcuityMD serves NO well-known discovery document of its own. Three separate
+  false positives were ruled out on this pass and none of them is an AcuityMD
+  document, so no WellKnown or SecurityTxt pointer is emitted in apis.yml:
+  (1) www.acuitymd.com answers every /.well-known/* path with HTTP 404 and a
+  Webflow "Invalid .well-known route" HTML page; (2) app.acuitymd.com is a
+  single-page application whose catch-all returns HTTP 200 with the SPA HTML
+  shell for EVERY /.well-known/* path probed, including agent-card.json and
+  openapi.json — a 200 that carries no document; (3) help.acuitymd.com does
+  return a real security.txt at HTTP 200, but it is INTERCOM's, not
+  AcuityMD's — the help center is hosted by Intercom and the file declares
+  "Canonical: https://app.intercom.com/.well-known/security.txt" with
+  Contact: security@intercom.com and bugcrowd.com/intercom. Crediting it to
+  AcuityMD would attribute another company's disclosure program to this
+  provider. api.acuitymd.com resolves through Cloudflare to an Envoy proxy
+  that answers every anonymous path with 404 "fault filter abort".
 probes:
 - path: /.well-known/security.txt
   url: https://www.acuitymd.com/.well-known/security.txt
@@ -20,11 +37,112 @@ probes:
   url: https://www.acuitymd.com/.well-known/oauth-authorization-server
   status: 404
   file: null
+- path: /.well-known/oauth-protected-resource
+  url: https://www.acuitymd.com/.well-known/oauth-protected-resource
+  status: 404
+  file: null
 - path: /.well-known/api-catalog
   url: https://www.acuitymd.com/.well-known/api-catalog
   status: 404
   file: null
 - path: /.well-known/ai-plugin.json
   url: https://www.acuitymd.com/.well-known/ai-plugin.json
+  status: 404
+  file: null
+- path: /.well-known/agent-card.json
+  url: https://www.acuitymd.com/.well-known/agent-card.json
+  status: 404
+  file: null
+- path: /.well-known/agent.json
+  url: https://www.acuitymd.com/.well-known/agent.json
+  status: 404
+  file: null
+- path: /.well-known/security.txt
+  url: https://app.acuitymd.com/.well-known/security.txt
+  status: 200
+  file: null
+  document: false
+  note: SPA catch-all — body is the app HTML shell, not a security.txt.
+- path: /.well-known/openid-configuration
+  url: https://app.acuitymd.com/.well-known/openid-configuration
+  status: 200
+  file: null
+  document: false
+  note: SPA catch-all — HTML shell, not JSON metadata.
+- path: /.well-known/oauth-authorization-server
+  url: https://app.acuitymd.com/.well-known/oauth-authorization-server
+  status: 200
+  file: null
+  document: false
+  note: SPA catch-all — HTML shell, not JSON metadata.
+- path: /.well-known/oauth-protected-resource
+  url: https://app.acuitymd.com/.well-known/oauth-protected-resource
+  status: 200
+  file: null
+  document: false
+  note: SPA catch-all — HTML shell, not JSON metadata.
+- path: /.well-known/api-catalog
+  url: https://app.acuitymd.com/.well-known/api-catalog
+  status: 200
+  file: null
+  document: false
+  note: SPA catch-all — HTML shell, not an RFC 9727 api-catalog.
+- path: /.well-known/ai-plugin.json
+  url: https://app.acuitymd.com/.well-known/ai-plugin.json
+  status: 200
+  file: null
+  document: false
+  note: SPA catch-all — HTML shell, not a plugin manifest.
+- path: /.well-known/agent-card.json
+  url: https://app.acuitymd.com/.well-known/agent-card.json
+  status: 200
+  file: null
+  document: false
+  note: >-
+    SPA catch-all — HTML shell, NOT an A2A AgentCard. Rejected per the
+    pipeline's HTML-body rule; no a2a/ artifact written.
+- path: /.well-known/agent.json
+  url: https://app.acuitymd.com/.well-known/agent.json
+  status: 200
+  file: null
+  document: false
+  note: SPA catch-all — HTML shell, not a legacy A2A agent card.
+- path: /.well-known/security.txt
+  url: https://help.acuitymd.com/.well-known/security.txt
+  status: 200
+  file: null
+  document: true
+  belongs_to: Intercom
+  note: >-
+    Real RFC 9116 security.txt, but it is Intercom's (Canonical:
+    https://app.intercom.com/.well-known/security.txt, Contact:
+    security@intercom.com, Policy: bugcrowd.com/intercom). help.acuitymd.com
+    is an Intercom-hosted help center. Not attributed to AcuityMD.
+- path: /.well-known/openid-configuration
+  url: https://help.acuitymd.com/.well-known/openid-configuration
+  status: 404
+  file: null
+- path: /.well-known/agent-card.json
+  url: https://help.acuitymd.com/.well-known/agent-card.json
+  status: 404
+  file: null
+- path: /.well-known/security.txt
+  url: https://api.acuitymd.com/.well-known/security.txt
+  status: 404
+  file: null
+- path: /.well-known/oauth-authorization-server
+  url: https://api.acuitymd.com/.well-known/oauth-authorization-server
+  status: 404
+  file: null
+- path: /.well-known/oauth-protected-resource
+  url: https://api.acuitymd.com/.well-known/oauth-protected-resource
+  status: 404
+  file: null
+- path: /.well-known/agent-card.json
+  url: https://api.acuitymd.com/.well-known/agent-card.json
+  status: 404
+  file: null
+- path: /.well-known/agent.json
+  url: https://api.acuitymd.com/.well-known/agent.json
   status: 404
   file: null

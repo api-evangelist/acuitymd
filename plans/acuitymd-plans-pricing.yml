@@ -1,0 +1,28 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.acuitymd.com/
+notes: >-
+  AcuityMD publishes NO pricing page and NO plans of any kind. /pricing returns
+  HTTP 404 (Webflow 404 page) and neither the site navigation, the platform
+  pages, nor the sitemap contains a pricing, plans or packaging route. Every
+  commercial call-to-action on the site is "Request a demo" or "Contact us",
+  which is the enterprise sales motion for a closed MedTech commercial
+  intelligence platform sold by seat/subscription under contract. Recorded as
+  an honest zero, not an omission.
+model: enterprise-contact-sales
+currency: null
+plan_count: 0
+plans: []
+signup: https://www.acuitymd.com/company/contact-us
+free_tier: false
+trial: false
+self_serve: false
+evidence:
+- url: https://www.acuitymd.com/pricing
+  status: 404
+- url: https://www.acuitymd.com/sitemap.xml
+  status: 200
+  note: No pricing/plans route present in the published sitemap.
+- url: https://www.acuitymd.com/company/contact-us
+  status: 200
+  note: The only commercial entry point — a demo request form.

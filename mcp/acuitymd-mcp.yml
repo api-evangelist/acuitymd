@@ -1,0 +1,32 @@
+generated: '2026-08-14'
+method: probed
+source: >-
+  live probes of api.acuitymd.com and app.acuitymd.com plus registry/web search
+  for a first-party AcuityMD MCP server
+notes: >-
+  AcuityMD ships NO MCP server, hosted or local, and there is no OpenAPI in
+  this repo from which a candidate tool list could honestly be derived, so no
+  tools are listed here and no MCPServer pointer is wired into apis.yml.
+  api.acuitymd.com/mcp returns HTTP 404 ("fault filter abort" from the Envoy
+  proxy behind Cloudflare); app.acuitymd.com is an SPA whose catch-all returns
+  200 HTML for every path and therefore cannot be used as evidence of an
+  endpoint. No @acuitymd package exists on npm or PyPI to install as stdio.
+  AcuityMD does market an AI layer (AcuityAI, plus an "AcuityAI Research"
+  release in July 2026), but it is an in-product feature, not an agent surface
+  another client can call.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: probed
+tools: []
+evidence:
+- url: https://api.acuitymd.com/mcp
+  status: 404
+- url: https://api.acuitymd.com/.well-known/oauth-protected-resource
+  status: 404
+- url: https://registry.npmjs.org/-/v1/search?text=acuitymd
+  status: 200
+  note: 0 packages — no @acuitymd/mcp or similar stdio server published.
