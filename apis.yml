@@ -24,14 +24,17 @@ deliveryModel:
   method: derived
 accessModel:
   pricing: unknown
-  onboarding: unknown
+  onboarding: approval
   trial: false
   try_now: false
   public: false
-  label: Unknown
+  label: Requires approval
   confidence: low
-  source: []
-  generated: '2026-07-22'
+  source:
+  - plans
+  - rate-limits
+  - security
+  generated: '2026-09-03'
   method: derived
 image: >-
   https://cdn.prod.website-files.com/6985dd9e41b26a29ef1c43dc/69863643e052c9604d901fe1_acuitymd-opengraph.jpg
