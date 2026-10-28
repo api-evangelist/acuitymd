@@ -64,6 +64,97 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-AcuityMD is a company surfaced as a portfolio company of iconiq-capital, redpoint-ventures and added to the API Evangelist network as a stub for enrichment. Sector: healthcare. This profile is a lead awaiting the enrichment pipeline.
+AcuityMD is a MedTech commercial intelligence platform that combines precise medical device market data, AI-powered insights (AcuityAI), and workflow tools to help commercial teams accelerate product adoption and revenue growth. Used by 500+ medical device companies, the platform spans Market Intelligence, Care Journeys, Targeting, Pipeline, Contracts, Territories and Forecasting. AcuityMD is a closed enterprise SaaS product: it exposes no public developer API, but integrates via a Salesforce AppExchange app, a Snowflake Marketplace listing, and an enterprise Data Connector that delivers market intelligence into customer data warehouses. Backed by ICONIQ Capital and Redpoint Ventures.
 
-Backed by: iconiq-capital, redpoint-ventures — https://www.acuitymd.com/
+**Areas:** Company · Healthcare · Medical Technology · Medical Devices · Market Intelligence · Sales Intelligence · Commercial Analytics · Data
+
+## AcuityMD on APIs.io
+
+Everything profiled for AcuityMD is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/acuitymd/](https://apis.io/providers/acuitymd/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Acuitymd Domain Security](https://apis.io/security/acuitymd/acuitymd-domain-security/)
+- [Acuitymd Trust Center](https://apis.io/security/acuitymd/acuitymd-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Acuitymd Plans Pricing](https://apis.io/plans/acuitymd/acuitymd-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Acuitymd Rate Limits](https://apis.io/rate-limits/acuitymd/acuitymd-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.acuitymd.com/)
+- [Support](https://www.acuitymd.com/company/contact-us)
+- [Blog](https://www.acuitymd.com/resources/blog)
+- [Terms of service](https://www.acuitymd.com/company/legal/contracts)
+- [Privacy policy](https://www.acuitymd.com/company/legal/privacy)
+- [GitHub](https://github.com/acuitymd)
+
+## API Evangelist rating
+
+**Kin Score 19.6** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 35.5 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 18.8** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/acuitymd/](https://apis.io/providers/acuitymd/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for AcuityMD: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/acuitymd/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
